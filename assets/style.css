@@ -10,6 +10,7 @@ body {
 
 nav {
   height: 10vh;
+  position: relative;
   background-color: #2d3436;
   background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
 }
@@ -35,13 +36,26 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f977ce;
+  background-image: linear-gradient(315deg, #f977ce 0%, #c373f2 74%);
 }
 
 .landing h1 {
   margin: 100px;
   font-weight: normal;
   font-size: 50px;
-  color: pink;
+  color: white;
+}
+
+.brand {
+  position: absolute;
+  cursor: pointer;
+  right: 89%;
+  color: white;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  font-size: 18px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
@@ -52,8 +66,15 @@ nav {
     margin: 5px;
   }
 
-  nav {
-    position: relative;
+  .brand {
+    position: absolute;
+    cursor: pointer;
+    right: 50%;
+    color: white;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    font-size: 18px;
+    font-weight: bold;
   }
 
   .hamburger {
@@ -62,14 +83,28 @@ nav {
     right: 5%;
     top: 50%;
     transform: translate(-5%, -50%);
+    z-index: 5;
   }
 
   .nav-links {
     position: fixed;
-    background: black;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    display: none;
+    clip-path: circle(10px at 90% -10%);
+    -webkit-clip-path: circle(10px at 90% -10%);
+    transition: all 1s ease-out;
+    z-index: 3;
+  }
+
+  .nav-links.open {
+    clip-path: circle(1500px at 90% -10%);
+    -webkit-clip-path: circle(1500px at 90% -10%);
+  }
+
+  .landing {
+    flex-direction: column;
   }
 }
