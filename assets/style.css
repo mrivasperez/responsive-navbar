@@ -50,15 +50,17 @@ nav {
 .brand {
   position: absolute;
   cursor: pointer;
-  right: 89%;
   color: white;
+  right: 80%;
   top: 50%;
-  transform: translate(-5%, -50%);
+  transform: translate(0, -50%);
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
+  padding-left: ;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .line {
     width: 30px;
     height: 3px;
@@ -67,9 +69,10 @@ nav {
   }
 
   .brand {
+    text-align: center;
     position: absolute;
     cursor: pointer;
-    right: 50%;
+    right: 40%;
     color: white;
     top: 50%;
     transform: translate(-5%, -50%);
